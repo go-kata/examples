@@ -12,8 +12,8 @@ import (
 
 func Exec() (kinit.Executor, error) {
 	return kinitx.NewExecutor(func(logger *log.Logger, greet greeter.Greeter) {
-		logger.Println("entering hello executor")
-		defer logger.Println("exiting hello executor")
+		logger.Print("entering hello executor")
+		defer logger.Print("exiting hello executor")
 		var name string
 		if len(os.Args) > 2 {
 			name = os.Args[2]

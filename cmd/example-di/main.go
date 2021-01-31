@@ -14,8 +14,8 @@ import (
 func main() { kinitx.MustInvoke(Main) }
 
 func Main(_ *Config, logger *log.Logger) (kinit.Executor, error) {
-	logger.Println("entering main executor")
-	defer logger.Println("exiting main executor")
+	logger.Print("entering main executor")
+	defer logger.Print("exiting main executor")
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
 		default:

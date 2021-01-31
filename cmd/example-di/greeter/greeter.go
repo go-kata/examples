@@ -14,14 +14,14 @@ var _ = kinit.MustHook(func() { kinitx.MustProvide(New) })
 type Greeter func(string)
 
 func New(config *Config, logger *log.Logger) (Greeter, kdone.Destructor, error) {
-	logger.Println("initializing greeter")
+	logger.Print("initializing greeter")
 	g := func(name string) {
 		fmt.Println()
 		fmt.Printf(config.Format, name)
 		fmt.Println()
 	}
 	dtor := kdone.DestructorFunc(func() error {
-		logger.Println("finalizing greeter")
+		logger.Print("finalizing greeter")
 		return nil
 	})
 	return g, dtor, nil
