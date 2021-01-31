@@ -21,7 +21,7 @@ func Main(_ *Config, logger *log.Logger) (kinit.Executor, error) {
 		default:
 			return nil, kerror.Newf(kerror.EInvalid, "invalid command: %s", os.Args[1])
 		case "hello":
-			return hello.Exec(), nil
+			return hello.Exec()
 		}
 	}
 	Help()

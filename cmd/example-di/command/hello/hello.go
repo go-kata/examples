@@ -10,8 +10,8 @@ import (
 	"github.com/go-kata/examples/cmd/example-di/greeter"
 )
 
-func Exec() kinit.Executor {
-	return kinitx.MustNewExecutor(func(logger *log.Logger, greet greeter.Greeter) {
+func Exec() (kinit.Executor, error) {
+	return kinitx.NewExecutor(func(logger *log.Logger, greet greeter.Greeter) {
 		logger.Println("entering hello executor")
 		defer logger.Println("exiting hello executor")
 		var name string
