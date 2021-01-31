@@ -1,0 +1,12 @@
+{
+  "logger": {
+    "prefix": "example-di ",
+    "datetime": true,
+    "microseconds": false,
+    "utc": false,
+    "file": false
+  },
+  "greeter": {
+    "format": "Hello, %s!\n"
+  }
+}
