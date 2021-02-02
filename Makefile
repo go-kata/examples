@@ -3,7 +3,10 @@ L_LOCAL_DIR   := $(L_PROJECT_DIR)/.local
 
 .PHONY: all
 all:
-	@echo "example-di-compile		Compile example-di binary"
+	@echo "Available commands:"
+	@echo ""
+	@echo "	example-di-compile		Compile example-di binary"
+	@echo ""
 
 .PHONY: example-di.compile
 example-di.compile:
