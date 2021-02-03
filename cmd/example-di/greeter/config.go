@@ -5,7 +5,7 @@ import (
 	"github.com/go-kata/kinitx"
 )
 
-var _ = kinit.MustHook(func() { kinitx.MustProvide(NewConfig) })
+var _ = kinit.MustDeclare(func() { kinitx.MustProvide(NewConfig) })
 
 type Config struct {
 	Format string

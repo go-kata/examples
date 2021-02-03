@@ -9,7 +9,7 @@ import (
 	"github.com/go-kata/kinitx"
 )
 
-var _ = kinit.MustHook(func() { kinitx.MustProvide(New) })
+var _ = kinit.MustDeclare(func() { kinitx.MustProvide(New) })
 
 type Greeter func(string)
 

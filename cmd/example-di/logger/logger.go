@@ -11,7 +11,7 @@ import (
 	"github.com/go-kata/examples/cmd/example-di/system"
 )
 
-var _ = kinit.MustHook(func() { kinitx.MustProvide(New) })
+var _ = kinit.MustDeclare(func() { kinitx.MustProvide(New) })
 
 func New(config *Config, sys *system.System) (*log.Logger, kdone.Destructor, error) {
 	var flags int

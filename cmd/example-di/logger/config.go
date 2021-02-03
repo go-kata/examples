@@ -7,7 +7,7 @@ import (
 	"github.com/go-kata/examples/cmd/example-di/system"
 )
 
-var _ = kinit.MustHook(func() { kinitx.MustProvide(NewConfig) })
+var _ = kinit.MustDeclare(func() { kinitx.MustProvide(NewConfig) })
 
 type Config struct {
 	Prefix       string

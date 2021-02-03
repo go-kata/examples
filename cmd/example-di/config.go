@@ -15,7 +15,7 @@ import (
 	"github.com/go-kata/examples/cmd/example-di/system"
 )
 
-var _ = kinit.MustHook(func() {
+var _ = kinit.MustDeclare(func() {
 	kinitx.MustProvide((*Config)(nil))
 	kinitx.MustApply((*Config).Load)
 })
