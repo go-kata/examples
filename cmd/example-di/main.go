@@ -11,17 +11,17 @@ import (
 	"github.com/go-kata/examples/cmd/example-di/command/hello"
 )
 
-func main() { kinitx.MustInvoke(Main) }
+func main() { kinitx.MustRun(Main) }
 
-func Main(_ *Config, logger *log.Logger) (kinit.Executor, error) {
+func Main(_ *Config, logger *log.Logger) (kinit.Functor, error) {
 	logger.Print("entering main executor")
 	defer logger.Print("exiting main executor")
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
 		default:
-			return nil, kerror.Newf(kerror.EInvalid, "invalid command: %s", os.Args[1])
+			return nil, kerror.Newf(kerror.ECustom, "invalid command: %s", os.Args[1])
 		case "hello":
-			return hello.Exec()
+			return hello.Func()
 		}
 	}
 	Help()

@@ -17,7 +17,7 @@ import (
 
 var _ = kinit.MustDeclare(func() {
 	kinitx.MustProvide((*Config)(nil))
-	kinitx.MustApply((*Config).Load)
+	kinitx.MustAttach((*Config).Load)
 })
 
 type Config struct {
