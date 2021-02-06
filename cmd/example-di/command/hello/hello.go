@@ -12,8 +12,8 @@ import (
 
 func Func() (kinit.Functor, error) {
 	return kinitx.NewFunctor(func(logger *log.Logger, greet greeter.Greeter) {
-		logger.Print("entering hello executor")
-		defer logger.Print("exiting hello executor")
+		logger.Print("entering hello")
+		defer logger.Print("exiting hello")
 		var name string
 		if len(os.Args) > 2 {
 			name = os.Args[2]
