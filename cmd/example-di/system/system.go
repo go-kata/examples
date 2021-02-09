@@ -4,11 +4,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/go-kata/kinit"
-	"github.com/go-kata/kinitx"
+	"github.com/go-kata/kinit/kinitx"
 )
 
-var _ = kinit.MustDeclare(func() { kinitx.MustProvide(New) })
+func init() { kinitx.MustProvide(New) }
 
 type System struct {
 	CurrentDir    string

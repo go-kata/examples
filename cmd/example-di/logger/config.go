@@ -1,13 +1,12 @@
 package logger
 
 import (
-	"github.com/go-kata/kinit"
-	"github.com/go-kata/kinitx"
+	"github.com/go-kata/kinit/kinitx"
 
 	"github.com/go-kata/examples/cmd/example-di/system"
 )
 
-var _ = kinit.MustDeclare(func() { kinitx.MustProvide(NewConfig) })
+func init() { kinitx.MustProvide(NewConfig) }
 
 type Config struct {
 	Prefix       string

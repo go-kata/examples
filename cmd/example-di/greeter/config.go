@@ -1,11 +1,8 @@
 package greeter
 
-import (
-	"github.com/go-kata/kinit"
-	"github.com/go-kata/kinitx"
-)
+import "github.com/go-kata/kinit/kinitx"
 
-var _ = kinit.MustDeclare(func() { kinitx.MustProvide(NewConfig) })
+func init() { kinitx.MustProvide(NewConfig) }
 
 type Config struct {
 	Format string

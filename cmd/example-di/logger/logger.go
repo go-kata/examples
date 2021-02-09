@@ -5,13 +5,12 @@ import (
 	"os"
 
 	"github.com/go-kata/kdone"
-	"github.com/go-kata/kinit"
-	"github.com/go-kata/kinitx"
+	"github.com/go-kata/kinit/kinitx"
 
 	"github.com/go-kata/examples/cmd/example-di/system"
 )
 
-var _ = kinit.MustDeclare(func() { kinitx.MustProvide(New) })
+func init() { kinitx.MustProvide(New) }
 
 func New(config *Config, sys *system.System) (*log.Logger, kdone.Destructor, error) {
 	var flags int
