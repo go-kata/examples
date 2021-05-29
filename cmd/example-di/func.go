@@ -20,7 +20,7 @@ func Func(_ *Config, logger *log.Logger) (kinit.Functor, error) {
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
 		default:
-			return nil, kerror.Newf(kerror.ECustom, "invalid command: %s", os.Args[1])
+			return nil, kerror.Newf(kerror.EInvalid, "invalid command: %s", os.Args[1])
 		case "hello":
 			return kinitx.NewFunctor(hello.Func)
 		}
